@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เซอร์ไพรส์วาเลนไทน์ 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #fff0f5;
+            color: #d63384;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        .slideshow {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slideshow img.active {
+            opacity: 1;
+        }
+        iframe {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>💖 เซอร์ไพรส์สำหรับที่รัก 💖</h1>
+        <p>ที่รัก... ขอให้วันนี้เป็นวันพิเศษสำหรับเรา</p>
+        <p>ขอบคุณที่อยู่เคียงข้างกันเสมอ รักมากๆ นะ! ❤️</p>
+        
+        <!-- ภาพสไลด์โชว์ -->
+        <div class="slideshow">
+            <img src="https://source.unsplash.com/600x400/?love,couple" class="active">
+            <img src="https://source.unsplash.com/600x400/?romantic,valentine">
+            <img src="https://source.unsplash.com/600x400/?heart,warm">
+        </div>
+
+        <!-- เพลง YouTube (เล่นอัตโนมัติ) -->
+        <iframe id="youtube" width="560" height="315" 
+            src="https://www.youtube.com/embed/NmPEYhcVabg?autoplay=1&loop=1&playlist=NmPEYhcVabg"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+    </div>
+
+    <script>
+        // สลับรูปอัตโนมัติ
+        let index = 0;
+        const images = document.querySelectorAll(".slideshow img");
+
+        function changeImage() {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }
+        setInterval(changeImage, 3000); // เปลี่ยนรูปทุก 3 วินาที
+    </script>
+
+</body>
+</html>
